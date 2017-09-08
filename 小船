@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>小船动画</title>
+</head>
+<style>
+/*	Animations
+------------------------------------------ */
+
+body {
+	-webkit-animation: bg-move 8s linear infinite;
+	background:url(island.png) bottom 50px left;
+	background-size:55%;
+}
+.boat {
+	-webkit-animation: rock-boat 3s ease-in-out infinite;
+}
+.boat::after {
+	-webkit-animation: steam 4s 2s infinite;
+}
+
+
+
+/*	Keyframes - WebKit only
+------------------------------------------ */
+
+@-webkit-keyframes rock-boat {
+	50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }
+}
+
+@-webkit-keyframes steam {
+	40%,
+	60%  { opacity: .8; }
+	100% { -webkit-transform: translate(-15%, -35%) rotateZ(20deg); }
+}
+
+@-webkit-keyframes bg-move {
+	0%   { background-position:  100% -560px; }
+	100% { background-position: -350% -460px; }
+}
+
+@-webkit-keyframes mike-move {
+	100% { left: 12%; }
+}
+
+@-webkit-keyframes mike-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+}
+</style>
+<body>
+	<div class="boat">
+		<img src="boat.png" alt="tugboat">
+	</div>
+	
+</body>
+
+</html>
